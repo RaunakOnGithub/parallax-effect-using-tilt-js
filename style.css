@@ -1,0 +1,70 @@
+/* A very basic CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set up the body for full height and basic font styles */
+html {
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif; /* A safe, default font */
+}
+/* Basic styling to center the element and see the effect */
+
+/* This is your main container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222; /* Changed for better contrast */
+}
+
+/* This is your main container */
+.your-element {
+    width: 300px;
+    height: 400px;
+    position: relative; /* Crucial for positioning children inside */
+    transform-style: preserve-3d; /* This enables the 3D space */
+    transform: perspective(1000px); /* Adds depth */
+}
+
+/* Style for the gradient background card */
+.box-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff0077, #5500ff);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* This element stays at the back, so no transform is needed */
+}
+
+/* Style for the floating white square */
+.floating-square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    /* This is the key part: push it forward toward the viewer */
+    transform: translate(-50%, -50%) translateZ(60px);
+}
+
+/* Style for the floating text */
+.floating-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    color: white;
+    font-family: sans-serif;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+    /* Push the text even further forward than the square */
+    transform: translate(-50%, -50%) translateZ(120px);
+}
